@@ -2,6 +2,9 @@
 
 A modern, ultra-responsive portfolio website showcasing cutting-edge ML/AI projects and software engineering expertise.
 
+**🚀 Live Demo:** [https://mercelvubangsi.vercel.app](https://mercelvubangsi.vercel.app)  
+**📁 Repository:** [https://github.com/vubangsi/portfolio](https://github.com/vubangsi/portfolio)
+
 ## 🚀 Features
 
 - **Modern Design**: Clean, professional design with glassmorphism effects and smooth animations
@@ -16,7 +19,7 @@ A modern, ultra-responsive portfolio website showcasing cutting-edge ML/AI proje
 - **Framework**: Astro 4.0 with React integration
 - **Styling**: Tailwind CSS with custom design system
 - **TypeScript**: Full type safety throughout
-- **Deployment**: Netlify-ready configuration
+- **Deployment**: Optimized for Vercel deployment
 
 ## 📁 Project Structure
 
@@ -39,7 +42,7 @@ src/
 ├── data/               # Static data
 │   └── projects.ts     # Project information
 └── styles/             # Global styles
-    └── global.css      # Tailwind imports and utilities
+    └── global.css      # Custom styles
 ```
 
 ## 🚀 Getting Started
@@ -53,7 +56,7 @@ src/
 
 1. Clone the repository:
 ```bash
-git clone <repository-url>
+git clone https://github.com/vubangsi/portfolio.git
 cd portfolio
 ```
 
@@ -79,23 +82,31 @@ The built files will be in the `dist/` directory.
 
 ## 🌐 Deployment
 
-### Netlify (Recommended)
+### Vercel (Recommended)
 
-1. Connect your repository to Netlify
-2. The build configuration is already set up in `netlify.toml`
-3. Deploy automatically on push to main branch
+1. **Automatic Deployment** (Recommended):
+   - Connect your GitHub repository to [Vercel](https://vercel.com)
+   - Vercel will automatically detect Astro and configure the build
+   - Deploy automatically on every push to the main branch
 
-### Vercel
+2. **Manual Deployment**:
+   ```bash
+   # Install Vercel CLI
+   npm i -g vercel
 
-1. Connect your repository to Vercel
-2. Vercel will auto-detect Astro configuration
-3. Deploy automatically
+   # Deploy
+   vercel
 
-### Manual Deployment
+   # Set up automatic deployments
+   vercel --prod
+   ```
 
-1. Build the project: `npm run build`
-2. Upload the `dist/` folder to your hosting provider
-3. Configure redirects for SPA routing if needed
+### Other Platforms
+
+The portfolio can also be deployed to:
+- **Netlify**: Configure build command as `npm run build` and publish directory as `dist`
+- **GitHub Pages**: Use static export and deploy the `dist` folder
+- **Any static hosting**: Upload the `dist` folder contents
 
 ## 🎨 Customization
 
@@ -107,17 +118,23 @@ The built files will be in the `dist/` directory.
 
 ### Modifying Colors
 
-Update the color scheme in `tailwind.config.mjs`:
+Update the Tailwind configuration in `src/layouts/BaseLayout.astro`:
 
-```typescript
-colors: {
-  primary: {
-    50: '#f0f9ff',
-    500: '#0ea5e9',  // Main primary color
-    600: '#0284c7',
-    900: '#0c4a6e',
-  },
-  // ... other colors
+```javascript
+tailwind.config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: {
+          50: '#f0f9ff',
+          500: '#0ea5e9',  // Main primary color
+          600: '#0284c7',
+          900: '#0c4a6e',
+        },
+        // ... other colors
+      }
+    }
+  }
 }
 ```
 
@@ -159,3 +176,6 @@ For collaboration opportunities, please use the contact form or reach out via Li
 ---
 
 Built with ❤️ using Astro, React, and Tailwind CSS
+
+**Repository:** https://github.com/vubangsi/portfolio  
+**Live Demo:** https://mercelvubangsi.vercel.app
