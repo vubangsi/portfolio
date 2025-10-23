@@ -82,31 +82,33 @@ The built files will be in the `dist/` directory.
 
 ## 🌐 Deployment
 
-### Vercel (Recommended)
+### Vercel (Recommended - Free Tier)
 
-1. **Automatic Deployment** (Recommended):
-   - Connect your GitHub repository to [Vercel](https://vercel.com)
-   - Vercel will automatically detect Astro and configure the build
-   - Deploy automatically on every push to the main branch
+1. **Connect to Vercel** (Free):
+   - Go to [vercel.com](https://vercel.com) and sign up for a free account
+   - Click "Import Project" and connect your GitHub account
+   - Select the `vubangsi/portfolio` repository
+   - Vercel will auto-detect Astro and configure everything automatically
 
-2. **Manual Deployment**:
-   ```bash
-   # Install Vercel CLI
-   npm i -g vercel
+2. **Set up Web3Forms** (Free):
+   - Create account at [web3forms.com](https://web3forms.com)
+   - Get your Access Key and replace the placeholder in the contact form
+   - Set your email address to receive form submissions
 
-   # Deploy
-   vercel
+3. **Deploy**:
+   - Click "Deploy" - your site will be live in seconds!
+   - **✅ No serverless functions required**
+   - **✅ Free tier supports unlimited static sites**
+   - **✅ Global CDN included**
 
-   # Set up automatic deployments
-   vercel --prod
-   ```
-
-### Other Platforms
+### Other Free Platforms
 
 The portfolio can also be deployed to:
 - **Netlify**: Configure build command as `npm run build` and publish directory as `dist`
 - **GitHub Pages**: Use static export and deploy the `dist` folder
 - **Any static hosting**: Upload the `dist` folder contents
+
+**💡 Pro Tip**: The free tier is perfect for this portfolio - no upgrade needed!
 
 ## 🎨 Customization
 
@@ -140,11 +142,22 @@ tailwind.config = {
 
 ### Contact Form
 
-The contact form API is in `src/pages/api/contact.ts`. Integrate with:
-- Email service (SendGrid, Resend)
-- Database storage
-- CRM systems
-- Newsletter services
+The contact form uses **Web3Forms** for free form handling without requiring serverless functions:
+
+1. **Get a free Web3Forms account** at [web3forms.com](https://web3forms.com)
+2. **Create a new form** and copy your Access Key
+3. **Replace the placeholder** in `src/components/Contact.astro`:
+   ```javascript
+   <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY_HERE">
+   ```
+4. **Set your email** in the Web3Forms dashboard to receive submissions
+
+**Web3Forms Features:**
+- ✅ Free tier supports unlimited forms
+- ✅ No serverless functions required
+- ✅ Spam protection included
+- ✅ File attachments support
+- ✅ Email notifications
 
 ## 📱 Responsive Design
 
@@ -161,9 +174,11 @@ The portfolio is built mobile-first with breakpoints:
 - Loading animations
 - Interactive elements
 
-## 🔧 API Endpoints
+## 🔧 Features
 
-- `POST /api/contact` - Contact form submission
+- **No Serverless Functions**: Uses Web3Forms for contact form (free tier compatible)
+- **Static Generation**: All pages pre-built for maximum performance
+- **SEO Optimized**: Meta tags, sitemap, and structured data included
 
 ## 📄 License
 
