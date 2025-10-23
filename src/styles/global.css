@@ -1,4 +1,8 @@
-/* Global styles and design system - Custom styles for portfolio (Tailwind loaded via CDN) */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Global styles and design system - Custom styles for portfolio */
 
 /* Custom scrollbar */
 ::-webkit-scrollbar {
