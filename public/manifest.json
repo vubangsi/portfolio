@@ -1,0 +1,16 @@
+{
+  "name": "Mercel Vubangsi - ML/AI Engineer Portfolio",
+  "short_name": "Mercel Portfolio",
+  "description": "Modern portfolio showcasing ML/AI projects and software engineering expertise",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#0ea5e9",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "32x32",
+      "type": "image/svg+xml"
+    }
+  ]
+}

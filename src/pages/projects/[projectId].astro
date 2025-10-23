@@ -1,0 +1,24 @@
+---
+import ProjectLayout from '../../layouts/ProjectLayout.astro';
+import { projects } from '../../data/projects';
+
+export async function getStaticPaths() {
+  return projects.map(project => ({
+    params: { projectId: project.id },
+    props: {
+      title: `${project.title} - Project Details`,
+      description: project.longDescription,
+      projectId: project.id
+    }
+  }));
+}
+
+const { projectId } = Astro.params;
+const project = projects.find(p => p.id === projectId);
+
+if (!project) {
+  throw new Error(`Project with id ${projectId} not found`);
+}
+---
+
+<ProjectLayout title={`${project.title} - Project Details`} description={project.longDescription} projectId={projectId} />

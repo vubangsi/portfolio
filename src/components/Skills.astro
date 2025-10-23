@@ -1,0 +1,399 @@
+---
+// Skills section with interactive visualization
+---
+
+<section id="skills" class="py-20 bg-dark-900 relative overflow-hidden">
+  <!-- Background Effects -->
+  <div class="absolute inset-0">
+    <div class="absolute top-1/4 right-1/4 w-64 h-64 bg-accent-500/5 rounded-full blur-3xl"></div>
+    <div class="absolute bottom-1/4 left-1/4 w-64 h-64 bg-primary-500/5 rounded-full blur-3xl"></div>
+  </div>
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+    <!-- Section Header -->
+    <div class="text-center mb-16">
+      <h2 class="text-4xl md:text-5xl font-bold text-dark-50 mb-4">
+        Technical <span class="gradient-text">Expertise</span>
+      </h2>
+      <p class="text-xl text-dark-400 max-w-3xl mx-auto">
+        A comprehensive toolkit of technologies and frameworks for building cutting-edge AI/ML solutions.
+      </p>
+    </div>
+
+    <!-- Skills Categories -->
+    <div class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-8 mb-16">
+      <!-- Programming Languages -->
+      <div class="skill-category card-hover">
+        <div class="bg-dark-800/50 rounded-xl p-6 border border-dark-500/20 h-full">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-primary-500/20 rounded-lg flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-primary-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-dark-50">Programming Languages</h3>
+          </div>
+
+          <div class="space-y-4">
+            {[
+              { name: 'Python', level: 95, color: 'bg-primary-500' },
+              { name: 'JavaScript/TypeScript', level: 90, color: 'bg-accent-500' },
+              { name: 'R', level: 85, color: 'bg-green-500' },
+              { name: 'Java', level: 80, color: 'bg-orange-500' },
+              { name: 'C++', level: 75, color: 'bg-purple-500' }
+            ].map(skill => (
+              <div class="skill-item">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-dark-300 font-medium">{skill.name}</span>
+                  <span class="text-primary-400 text-sm font-semibold">{skill.level}%</span>
+                </div>
+                <div class="w-full bg-dark-600 rounded-full h-2">
+                  <div
+                    class={`h-2 rounded-full transition-all duration-1000 ease-out ${skill.color}`}
+                    style={`width: ${skill.level}%`}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- ML/AI Frameworks -->
+      <div class="skill-category card-hover">
+        <div class="bg-dark-800/50 rounded-xl p-6 border border-dark-500/20 h-full">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-accent-500/20 rounded-lg flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-accent-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.663 17h4.673M12 3v1m6.364 1.636l-.707.707M21 12h-1M4 12H3m3.343-5.657l-.707-.707m2.828 9.9a5 5 0 117.072 0l-.548.547A3.374 3.374 0 0014 18.469V19a2 2 0 11-4 0v-.531c0-.895-.356-1.754-.988-2.386l-.548-.547z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-dark-50">ML/AI Frameworks</h3>
+          </div>
+
+          <div class="space-y-4">
+            {[
+              { name: 'TensorFlow/Keras', level: 95, color: 'bg-primary-500' },
+              { name: 'PyTorch', level: 92, color: 'bg-red-500' },
+              { name: 'Scikit-learn', level: 90, color: 'bg-orange-500' },
+              { name: 'Hugging Face', level: 88, color: 'bg-accent-500' },
+              { name: 'OpenCV', level: 85, color: 'bg-green-500' }
+            ].map(skill => (
+              <div class="skill-item">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-dark-300 font-medium">{skill.name}</span>
+                  <span class="text-primary-400 text-sm font-semibold">{skill.level}%</span>
+                </div>
+                <div class="w-full bg-dark-600 rounded-full h-2">
+                  <div
+                    class={`h-2 rounded-full transition-all duration-1000 ease-out ${skill.color}`}
+                    style={`width: ${skill.level}%`}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Cloud & DevOps -->
+      <div class="skill-category card-hover">
+        <div class="bg-dark-800/50 rounded-xl p-6 border border-dark-500/20 h-full">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-green-500/20 rounded-lg flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-green-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M9 19l3 3m0 0l3-3m-3 3V10"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-dark-50">Cloud & DevOps</h3>
+          </div>
+
+          <div class="space-y-4">
+            {[
+              { name: 'AWS/GCP/Azure', level: 88, color: 'bg-orange-500' },
+              { name: 'Docker/Kubernetes', level: 85, color: 'bg-blue-500' },
+              { name: 'CI/CD Pipelines', level: 82, color: 'bg-purple-500' },
+              { name: 'Apache Kafka', level: 80, color: 'bg-green-500' },
+              { name: 'Terraform', level: 75, color: 'bg-indigo-500' }
+            ].map(skill => (
+              <div class="skill-item">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-dark-300 font-medium">{skill.name}</span>
+                  <span class="text-primary-400 text-sm font-semibold">{skill.level}%</span>
+                </div>
+                <div class="w-full bg-dark-600 rounded-full h-2">
+                  <div
+                    class={`h-2 rounded-full transition-all duration-1000 ease-out ${skill.color}`}
+                    style={`width: ${skill.level}%`}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Data & Databases -->
+      <div class="skill-category card-hover">
+        <div class="bg-dark-800/50 rounded-xl p-6 border border-dark-500/20 h-full">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-purple-500/20 rounded-lg flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-purple-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4m0 5c0 2.21-3.582 4-8 4s-8-1.79-8-4"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-dark-50">Data & Databases</h3>
+          </div>
+
+          <div class="space-y-4">
+            {[
+              { name: 'PostgreSQL/MongoDB', level: 90, color: 'bg-blue-500' },
+              { name: 'Apache Spark', level: 85, color: 'bg-orange-500' },
+              { name: 'Redis/Elasticsearch', level: 82, color: 'bg-red-500' },
+              { name: 'Pandas/NumPy', level: 95, color: 'bg-green-500' },
+              { name: 'Apache Airflow', level: 78, color: 'bg-indigo-500' }
+            ].map(skill => (
+              <div class="skill-item">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-dark-300 font-medium">{skill.name}</span>
+                  <span class="text-primary-400 text-sm font-semibold">{skill.level}%</span>
+                </div>
+                <div class="w-full bg-dark-600 rounded-full h-2">
+                  <div
+                    class={`h-2 rounded-full transition-all duration-1000 ease-out ${skill.color}`}
+                    style={`width: ${skill.level}%`}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Web Technologies -->
+      <div class="skill-category card-hover">
+        <div class="bg-dark-800/50 rounded-xl p-6 border border-dark-500/20 h-full">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-blue-500/20 rounded-lg flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-blue-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-dark-50">Web Technologies</h3>
+          </div>
+
+          <div class="space-y-4">
+            {[
+              { name: 'React/Next.js', level: 88, color: 'bg-blue-500' },
+              { name: 'Node.js/FastAPI', level: 85, color: 'bg-green-500' },
+              { name: 'TypeScript', level: 90, color: 'bg-blue-600' },
+              { name: 'Tailwind CSS', level: 92, color: 'bg-teal-500' },
+              { name: 'GraphQL', level: 80, color: 'bg-pink-500' }
+            ].map(skill => (
+              <div class="skill-item">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-dark-300 font-medium">{skill.name}</span>
+                  <span class="text-primary-400 text-sm font-semibold">{skill.level}%</span>
+                </div>
+                <div class="w-full bg-dark-600 rounded-full h-2">
+                  <div
+                    class={`h-2 rounded-full transition-all duration-1000 ease-out ${skill.color}`}
+                    style={`width: ${skill.level}%`}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+
+      <!-- Specialized AI Skills -->
+      <div class="skill-category card-hover">
+        <div class="bg-dark-800/50 rounded-xl p-6 border border-dark-500/20 h-full">
+          <div class="flex items-center mb-6">
+            <div class="w-12 h-12 bg-red-500/20 rounded-lg flex items-center justify-center mr-4">
+              <svg class="w-6 h-6 text-red-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z"/>
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-dark-50">AI Specializations</h3>
+          </div>
+
+          <div class="space-y-4">
+            {[
+              { name: 'Computer Vision', level: 92, color: 'bg-purple-500' },
+              { name: 'Natural Language Processing', level: 90, color: 'bg-blue-500' },
+              { name: 'Deep Learning', level: 95, color: 'bg-red-500' },
+              { name: 'Reinforcement Learning', level: 85, color: 'bg-orange-500' },
+              { name: 'MLOps & Deployment', level: 88, color: 'bg-green-500' }
+            ].map(skill => (
+              <div class="skill-item">
+                <div class="flex justify-between items-center mb-2">
+                  <span class="text-dark-300 font-medium">{skill.name}</span>
+                  <span class="text-primary-400 text-sm font-semibold">{skill.level}%</span>
+                </div>
+                <div class="w-full bg-dark-600 rounded-full h-2">
+                  <div
+                    class={`h-2 rounded-full transition-all duration-1000 ease-out ${skill.color}`}
+                    style={`width: ${skill.level}%`}
+                  ></div>
+                </div>
+              </div>
+            ))}
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Tech Stack Visualization -->
+    <div class="bg-dark-800/30 rounded-2xl p-8 border border-dark-500/20">
+      <h3 class="text-2xl font-bold text-dark-50 text-center mb-8">Complete Tech Stack</h3>
+
+      <!-- Interactive tech stack grid -->
+      <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
+        {[
+          { name: 'Python', icon: '🐍', category: 'Language' },
+          { name: 'TensorFlow', icon: '🧠', category: 'ML' },
+          { name: 'PyTorch', icon: '🔥', category: 'ML' },
+          { name: 'React', icon: '⚛️', category: 'Web' },
+          { name: 'AWS', icon: '☁️', category: 'Cloud' },
+          { name: 'Docker', icon: '🐳', category: 'DevOps' },
+          { name: 'Kubernetes', icon: '⚙️', category: 'DevOps' },
+          { name: 'PostgreSQL', icon: '🐘', category: 'Database' },
+          { name: 'Apache Spark', icon: '⚡', category: 'Data' },
+          { name: 'OpenCV', icon: '👁️', category: 'CV' },
+          { name: 'Hugging Face', icon: '🤗', category: 'NLP' },
+          { name: 'FastAPI', icon: '🚀', category: 'Web' },
+          { name: 'MongoDB', icon: '🍃', category: 'Database' },
+          { name: 'Redis', icon: '🔴', category: 'Cache' },
+          { name: 'Apache Kafka', icon: '📨', category: 'Messaging' },
+          { name: 'Grafana', icon: '📊', category: 'Monitoring' },
+          { name: 'TensorFlow.js', icon: '🕸️', category: 'ML' },
+          { name: 'Node.js', icon: '🟢', category: 'Runtime' },
+          { name: 'TypeScript', icon: '📘', category: 'Language' },
+          { name: 'Tailwind CSS', icon: '🎨', category: 'Styling' },
+          { name: 'Git', icon: '📝', category: 'Version Control' },
+          { name: 'Linux', icon: '🐧', category: 'OS' }
+        ].map((tech, index) => (
+          <div
+            class="tech-item group"
+            style={`animation-delay: ${index * 0.1}s`}
+          >
+            <div class="bg-dark-700/50 hover:bg-primary-500/20 rounded-lg p-4 border border-dark-500/20 hover:border-primary-500/30 transition-all duration-300 text-center group-hover:transform group-hover:scale-105">
+              <div class="text-2xl mb-2">{tech.icon}</div>
+              <div class="text-sm font-medium text-dark-300 group-hover:text-primary-400">{tech.name}</div>
+              <div class="text-xs text-dark-500 mt-1">{tech.category}</div>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+
+    <!-- Certifications & Achievements -->
+    <div class="mt-16">
+      <h3 class="text-2xl font-bold text-dark-50 text-center mb-8">Certifications & Achievements</h3>
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        {[
+          { title: 'AWS Machine Learning', desc: 'Specialty Certification', icon: '☁️' },
+          { title: 'TensorFlow Developer', desc: 'Certified Developer', icon: '🧠' },
+          { title: 'Google Cloud AI', desc: 'Professional Certificate', icon: '🌥️' },
+          { title: 'Deep Learning Specialization', desc: 'Coursera - Andrew Ng', icon: '🎓' }
+        ].map((cert, index) => (
+          <div class="cert-card" style={`animation-delay: ${index * 0.2}s`}>
+            <div class="bg-dark-800/30 rounded-lg p-6 border border-dark-500/20 text-center hover:border-primary-500/30 transition-colors">
+              <div class="text-4xl mb-3">{cert.icon}</div>
+              <h4 class="text-lg font-semibold text-dark-50 mb-2">{cert.title}</h4>
+              <p class="text-dark-400 text-sm">{cert.desc}</p>
+            </div>
+          </div>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
+
+<script>
+  // Animate skill bars on scroll
+  const observerOptions = {
+    threshold: 0.3,
+    rootMargin: '0px 0px -50px 0px'
+  };
+
+  const skillObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        const skillBars = entry.target.querySelectorAll('[style*="width"]');
+        skillBars.forEach((bar, index) => {
+          setTimeout(() => {
+            bar.classList.add('animate-pulse');
+          }, index * 200);
+        });
+      }
+    });
+  }, observerOptions);
+
+  // Observe skill categories
+  document.querySelectorAll('.skill-category').forEach(category => {
+    skillObserver.observe(category);
+  });
+
+  // Tech stack hover effects
+  document.querySelectorAll('.tech-item').forEach(item => {
+    item.addEventListener('mouseenter', () => {
+      item.style.transform = 'scale(1.05)';
+      item.style.zIndex = '10';
+    });
+
+    item.addEventListener('mouseleave', () => {
+      item.style.transform = 'scale(1)';
+      item.style.zIndex = '1';
+    });
+  });
+</script>
+
+<style>
+  .skill-item {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  .skill-category:hover .skill-item {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+  .tech-item {
+    opacity: 0;
+    animation: fadeInScale 0.6s ease-out forwards;
+  }
+
+  .cert-card {
+    opacity: 0;
+    transform: translateY(30px);
+    animation: fadeInUp 0.6s ease-out forwards;
+  }
+
+  @keyframes fadeInUp {
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  @keyframes fadeInScale {
+    to {
+      opacity: 1;
+      transform: scale(1);
+    }
+  }
+
+  .card-hover {
+    transition: all 0.3s ease;
+  }
+
+  .card-hover:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.3);
+  }
+</style>
