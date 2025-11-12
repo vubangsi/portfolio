@@ -231,14 +231,12 @@ if (!project) {
         </p>
         <div class="flex flex-col sm:flex-row gap-4 justify-center">
           {project.githubUrl && (
-            <a
-              href={project.githubUrl}
-              target="_blank"
-              rel="noopener noreferrer"
-              class="bg-white text-sky-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors"
+            <button
+              id="view-source-btn"
+              class="bg-white text-sky-600 px-6 py-3 rounded-lg font-semibold hover:bg-gray-100 transition-colors cursor-pointer"
             >
               View Source Code
-            </a>
+            </button>
           )}
           {project.liveUrl && (
             <a
@@ -263,6 +261,38 @@ if (!project) {
 </section>
 
 <script>
+  // Import SweetAlert2
+  import Swal from 'sweetalert2';
+
+  // View Source Code button handler
+  document.addEventListener('DOMContentLoaded', () => {
+    const viewSourceBtn = document.getElementById('view-source-btn');
+    if (viewSourceBtn) {
+      viewSourceBtn.addEventListener('click', () => {
+        Swal.fire({
+          title: 'Private Artifact',
+          text: 'This project is currently under a non-disclosure agreement. The source code is protected and not available for public viewing at this time.',
+          icon: 'info',
+          confirmButtonText: 'I Understand',
+          confirmButtonColor: '#3b82f6',
+          backdrop: `
+            rgba(0,0,123,0.4)
+            url("/images/nyan-cat-nyan-cat.gif")
+            center top
+            no-repeat
+          `,
+          showCloseButton: true,
+          customClass: {
+            popup: 'border-2 border-slate-200',
+            title: 'text-2xl font-bold text-slate-800',
+            confirmButton: 'px-6 py-2 text-sm font-semibold rounded-lg',
+            closeButton: 'text-slate-500 hover:text-slate-700'
+          }
+        });
+      });
+    }
+  });
+
   // Screenshot modal functionality
   document.querySelectorAll('[data-screenshot]').forEach(item => {
     item.addEventListener('click', () => {

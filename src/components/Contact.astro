@@ -55,8 +55,8 @@
             </div>
             <div>
               <h4 class="font-semibold text-dark-900">LinkedIn</h4>
-              <a href="https://linkedin.com/in/mercelvubangsi" target="_blank" rel="noopener noreferrer" class="text-accent-600 hover:text-accent-700 transition-colors">
-                linkedin.com/in/mercelvubangsi
+              <a href="https://linkedin.com/in/mercel-vubangsi-68109b23a" target="_blank" rel="noopener noreferrer" class="text-accent-600 hover:text-accent-700 transition-colors">
+                linkedin.com/in/mercel-vubangsi-68109b23a
               </a>
             </div>
           </div>
@@ -69,8 +69,8 @@
             </div>
             <div>
               <h4 class="font-semibold text-dark-900">GitHub</h4>
-              <a href="https://github.com/mercelvubangsi" target="_blank" rel="noopener noreferrer" class="text-green-600 hover:text-green-700 transition-colors">
-                github.com/mercelvubangsi
+              <a href="https://github.com/vmercel" target="_blank" rel="noopener noreferrer" class="text-green-600 hover:text-green-700 transition-colors">
+                github.com/vmercel
               </a>
             </div>
           </div>
@@ -106,12 +106,7 @@
       <div class="bg-white rounded-2xl shadow-xl p-8 border border-dark-200">
         <h3 class="text-2xl font-bold text-dark-900 mb-6">Send a Message</h3>
 
-        <form id="contact-form" action="https://api.web3forms.com/submit" method="POST" class="space-y-6">
-          <!-- Web3Forms Configuration -->
-          <input type="hidden" name="access_key" value="YOUR_WEB3FORMS_KEY_HERE">
-          <input type="hidden" name="subject" value="New Contact Form Submission from Portfolio">
-          <input type="hidden" name="from_name" value="Portfolio Contact Form">
-
+        <form id="contact-form" class="space-y-6">
           <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div>
               <label for="name" class="block text-sm font-medium text-slate-700 mb-2">
@@ -188,18 +183,16 @@
             ></textarea>
           </div>
 
-          <div class="flex items-center justify-between">
-            <div class="flex items-center">
-              <input
-                type="checkbox"
-                id="newsletter"
-                name="newsletter"
-                class="w-4 h-4 text-sky-600 border-slate-300 rounded focus:ring-sky-500"
-              />
-              <label for="newsletter" class="ml-2 text-sm text-slate-600">
-                Subscribe to newsletter for AI/ML insights
-              </label>
-            </div>
+          <div class="flex items-center">
+            <input
+              type="checkbox"
+              id="newsletter"
+              name="newsletter"
+              class="w-4 h-4 text-sky-600 border-slate-300 rounded focus:ring-sky-500"
+            />
+            <label for="newsletter" class="ml-2 text-sm text-slate-600">
+              Subscribe to newsletter for AI/ML insights
+            </label>
           </div>
 
           <button
@@ -220,9 +213,9 @@
             <svg class="w-5 h-5 text-green-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"/>
             </svg>
-            <p class="text-green-800 font-medium">Message sent successfully!</p>
+            <p class="text-green-700 font-medium">Your message has been sent successfully!</p>
           </div>
-          <p class="text-green-700 text-sm mt-1">Thank you for your message. I'll get back to you within 24 hours.</p>
+          <p class="text-green-600 text-sm mt-2">Thank you for reaching out. I'll get back to you as soon as possible. You should receive a confirmation email shortly.</p>
         </div>
 
         <div id="error-message" class="hidden mt-4 p-4 bg-red-50 border border-red-200 rounded-lg">
@@ -230,82 +223,118 @@
             <svg class="w-5 h-5 text-red-600 mr-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12"/>
             </svg>
-            <p class="text-red-800 font-medium">Failed to send message.</p>
+            <p class="text-red-700 font-medium">Error sending message</p>
           </div>
-          <p class="text-red-700 text-sm mt-1">Please try again or contact me directly via email.</p>
+          <p class="text-red-600 text-sm mt-2">There was an error sending your message. Please try again later or contact me directly at vmercel@gmail.com</p>
         </div>
       </div>
-    </div>
-  </div>
 </section>
 
 <script>
-  // Simple form handling for Web3Forms
-  const contactForm = document.getElementById('contact-form') as HTMLFormElement;
-  const submitBtn = document.getElementById('submit-btn') as HTMLButtonElement;
-  const submitText = document.getElementById('submit-text') as HTMLSpanElement;
-  const loadingSpinner = document.getElementById('loading-spinner') as SVGElement;
-  const successMessage = document.getElementById('success-message') as HTMLDivElement;
-  const errorMessage = document.getElementById('error-message') as HTMLDivElement;
+  // Form handling for contact form
+  document.addEventListener('DOMContentLoaded', () => {
+    const contactForm = document.getElementById('contact-form');
+    const successMessage = document.getElementById('success-message');
+    const errorMessage = document.getElementById('error-message');
+    const loadingSpinner = document.getElementById('loading-spinner');
+    const submitText = document.getElementById('submit-text');
 
-  // Show loading state
-  function showLoading() {
-    submitBtn.disabled = true;
-    submitText.textContent = 'Sending...';
-    loadingSpinner.classList.remove('hidden');
-  }
+    // Initialize form field focus animations
+    if (contactForm) {
+      const formInputs = contactForm.querySelectorAll('input, select, textarea');
+      formInputs.forEach(input => {
+        // Add focus styles
+        input.addEventListener('focus', () => {
+          input.parentElement?.classList.add('ring-2', 'ring-sky-500/20');
+        });
 
-  // Hide loading state
-  function hideLoading() {
-    submitBtn.disabled = false;
-    submitText.textContent = 'Send Message';
-    loadingSpinner.classList.add('hidden');
-  }
+        // Remove focus styles
+        input.addEventListener('blur', () => {
+          input.parentElement?.classList.remove('ring-2', 'ring-sky-500/20');
+        });
+      });
 
-  // Show success message
-  function showSuccess() {
-    successMessage.classList.remove('hidden');
-    errorMessage.classList.add('hidden');
-    contactForm.reset();
-    hideLoading();
+      // Form submission handler
+      contactForm.addEventListener('submit', async (e) => {
+        e.preventDefault();
+        
+        // Show loading state
+        const submitButton = contactForm.querySelector('button[type="submit"]');
+        const originalButtonText = submitText.textContent;
+        submitButton.disabled = true;
+        submitText.textContent = 'Sending...';
+        loadingSpinner.classList.remove('hidden');
+        
+        // Hide any previous messages
+        successMessage.classList.add('hidden');
+        errorMessage.classList.add('hidden');
+        
+        try {
+          // Get form data
+          const nameInput = document.getElementById('name');
+          const emailInput = document.getElementById('email');
+          const companyInput = document.getElementById('company');
+          const projectTypeInput = document.getElementById('project-type');
+          const messageInput = document.getElementById('message');
+          const newsletterInput = document.getElementById('newsletter');
 
-    // Scroll to success message
-    successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
+          const formData = {
+            name: nameInput?.value || '',
+            email: emailInput?.value || '',
+            company: companyInput?.value || '',
+            project_type: projectTypeInput?.value || '',
+            message: messageInput?.value || '',
+            newsletter: newsletterInput?.checked || false
+          };
 
-  // Show error message
-  function showError() {
-    errorMessage.classList.remove('hidden');
-    successMessage.classList.add('hidden');
-    hideLoading();
-
-    // Scroll to error message
-    errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
-  }
-
-  // Form submission
-  contactForm.addEventListener('submit', function(e) {
-    showLoading();
-
-    // Web3Forms will handle the actual submission
-    // We'll simulate success after a delay for UX
-    setTimeout(() => {
-      // For demo purposes, always show success
-      // In production, Web3Forms will handle this automatically
-      showSuccess();
-    }, 2000);
-  });
-
-  // Form field focus animations
-  const formInputs = contactForm.querySelectorAll('input, select, textarea');
-  formInputs.forEach(input => {
-    input.addEventListener('focus', () => {
-      input.parentElement?.classList.add('ring-2', 'ring-sky-500/20');
-    });
-
-    input.addEventListener('blur', () => {
-      input.parentElement?.classList.remove('ring-2', 'ring-sky-500/20');
-    });
+          // Basic validation
+          if (!formData.name || !formData.email || !formData.message) {
+            throw new Error('Please fill in all required fields');
+          }
+          
+          // Email validation
+          const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+          if (!emailRegex.test(formData.email)) {
+            throw new Error('Please enter a valid email address');
+          }
+          
+          // Send form data to our API endpoint
+          const response = await fetch('/api/contact', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(formData)
+          });
+          
+          if (!response.ok) {
+            const errorData = await response.json().catch(() => ({}));
+            throw new Error(errorData.message || 'Failed to send message');
+          }
+          
+          // Show success message
+          contactForm.reset();
+          successMessage.classList.remove('hidden');
+          successMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+          
+        } catch (error) {
+          console.error('Error:', error);
+          const errorText = errorMessage.querySelector('p:last-child');
+          if (errorText) {
+            errorText.textContent = `There was an error: ${error.message || 'Please try again later.'}`;
+          }
+          errorMessage.classList.remove('hidden');
+          errorMessage.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        } finally {
+          // Reset button state
+          if (submitButton && submitText && loadingSpinner) {
+            submitButton.disabled = false;
+            submitText.textContent = originalButtonText;
+            loadingSpinner.classList.add('hidden');
+          }
+        }
+      });
+    }
   });
 </script>
 
